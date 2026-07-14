@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dra. Isabelle Sudario — Médica Veterinária | Neurologia</title>
+  <meta name="description" content="Dra. Isabelle Sudario — Médica Veterinária, pós-graduada em Neurologia e Neurocirurgia. Atendimento domiciliar e volante. Agende um check-up para o seu pet." />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="apple-touch-icon" href="assets/favicon.svg" />
+  <meta name="theme-color" content="#2f9fac" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dra. Isabelle Sudario — Médica Veterinária" />
+  <meta property="og:description" content="Cuidado completo para o seu pet — da prevenção ao diagnóstico neurológico." />
+  <meta property="og:type" content="website" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=Quicksand:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <style>
+    :root {
+      --teal: #2f9fac;
+      --teal-dark: #1f7a85;
+      --teal-soft: #d9eef0;
+      --pink: #ec4b96;
+      --pink-dark: #d6377f;
+      --navy: #1e2a4a;
+      --cream: #f6f3ee;
+      --ink: #2a3247;
+      --muted: #6b7280;
+      --white: #ffffff;
+      --shadow: 0 18px 45px rgba(30, 42, 74, 0.12);
+      --radius: 22px;
+    }
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--ink);
+      background: var(--cream);
+      line-height: 1.65;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, .display { font-family: 'Quicksand', sans-serif; }
+
+    a { text-decoration: none; color: inherit; }
+
+    .wrap { width: min(1120px, 92%); margin: 0 auto; }
+
+    section { position: relative; }
+
+    /* ---------- NAV ---------- */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      background: rgba(246, 243, 238, 0.85);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(30, 42, 74, 0.06);
+    }
+    .nav {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 14px 0;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; }
+    .brand .cross {
+      width: 40px; height: 40px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      display: grid; place-items: center; color: #fff; font-weight: 700;
+      box-shadow: 0 6px 16px rgba(47, 159, 172, .35);
+      position: relative;
+    }
+    .brand .cross::before,
+    .brand .cross::after {
+      content: ""; position: absolute; background: #fff; border-radius: 2px;
+    }
+    .brand .cross::before { width: 18px; height: 5px; }
+    .brand .cross::after { width: 5px; height: 18px; }
+    .brand-text b { font-family: 'Quicksand'; font-weight: 700; font-size: 1.05rem; color: var(--navy); display: block; line-height: 1.1; }
+    .brand-text span { font-size: .68rem; letter-spacing: 3px; color: var(--teal-dark); text-transform: uppercase; }
+
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { font-size: .92rem; font-weight: 500; color: var(--navy); transition: color .2s; }
+    .nav-links a:hover { color: var(--pink); }
+    .nav-cta {
+      background: var(--pink); color: #fff !important; padding: 10px 20px;
+      border-radius: 999px; font-weight: 600; font-size: .88rem;
+      box-shadow: 0 8px 18px rgba(236, 75, 150, .3);
+      transition: transform .2s;
+    }
+    .nav-cta:hover { transform: translateY(-2px); }
+    .menu-btn { display: none; background: none; border: 0; font-size: 1.6rem; color: var(--navy); cursor: pointer; }
+
+    /* ---------- HERO ---------- */
+    .hero { padding: 60px 0 80px; overflow: hidden; }
+    .hero-grid {
+      display: grid; grid-template-columns: 1.05fr .95fr; gap: 40px; align-items: center;
+    }
+    .hero .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--teal-soft); color: var(--teal-dark);
+      padding: 7px 16px; border-radius: 999px; font-weight: 600; font-size: .8rem;
+      letter-spacing: .5px; margin-bottom: 22px;
+    }
+    .hero h1 { font-size: clamp(2.3rem, 5vw, 3.6rem); color: var(--navy); line-height: 1.08; font-weight: 700; }
+    .hero h1 .hl { color: var(--teal); }
+    .hero p.lead { font-size: 1.12rem; color: var(--muted); margin: 20px 0 30px; max-width: 30rem; }
+    .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 15px 26px; border-radius: 999px; font-weight: 600; font-size: .98rem;
+      cursor: pointer; border: 0; transition: transform .2s, box-shadow .2s;
+    }
+    .btn svg { width: 20px; height: 20px; }
+    .btn-wa { background: #25D366; color: #fff; box-shadow: 0 12px 26px rgba(37, 211, 102, .35); }
+    .btn-wa:hover { transform: translateY(-3px); box-shadow: 0 16px 32px rgba(37, 211, 102, .45); }
+    .btn-outline { background: #fff; color: var(--navy); border: 2px solid var(--teal); }
+    .btn-outline:hover { transform: translateY(-3px); background: var(--teal); color: #fff; }
+
+    .hero-photo { position: relative; display: grid; place-items: center; }
+    .hero-blob {
+      position: absolute; inset: 0; margin: auto;
+      width: 118%; height: 118%;
+      background: radial-gradient(circle at 60% 40%, var(--teal) 0%, var(--teal-dark) 70%);
+      border-radius: 44% 56% 62% 38% / 48% 42% 58% 52%;
+      filter: blur(2px); opacity: .95;
+      animation: morph 14s ease-in-out infinite;
+    }
+    @keyframes morph {
+      0%,100% { border-radius: 44% 56% 62% 38% / 48% 42% 58% 52%; }
+      50% { border-radius: 58% 42% 40% 60% / 55% 58% 42% 45%; }
+    }
+    .hero-photo img {
+      position: relative; z-index: 2; width: 100%; max-width: 440px;
+      filter: drop-shadow(0 22px 40px rgba(0,0,0,.28));
+    }
+    .hero-photo .ph-fallback {
+      position: relative; z-index: 2; width: 100%; max-width: 420px; aspect-ratio: 3/4;
+      border-radius: 30px; background: rgba(255,255,255,.15);
+      border: 2px dashed rgba(255,255,255,.6); color: #fff;
+      display: grid; place-items: center; text-align: center; padding: 30px;
+      font-size: .9rem;
+    }
+    .floaty {
+      position: absolute; z-index: 3; background: #fff; border-radius: 16px;
+      padding: 12px 16px; box-shadow: var(--shadow); font-size: .8rem; font-weight: 600;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .floaty .dot { width: 30px; height: 30px; border-radius: 9px; display: grid; place-items: center; color: #fff; }
+    .floaty.f1 { top: 8%; left: -4%; }
+    .floaty.f2 { bottom: 12%; right: -6%; }
+
+    /* ---------- STRIP ---------- */
+    .strip { background: var(--navy); color: #fff; padding: 26px 0; }
+    .strip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; text-align: center; }
+    .strip-grid b { font-family: 'Quicksand'; font-size: 1.7rem; color: #fff; display: block; }
+    .strip-grid span { font-size: .82rem; color: #b9c2d8; }
+
+    /* ---------- SOBRE ---------- */
+    .sobre { padding: 90px 0; }
+    .sec-head { text-align: center; max-width: 40rem; margin: 0 auto 55px; }
+    .sec-head .tag { color: var(--pink); font-weight: 700; letter-spacing: 2px; text-transform: uppercase; font-size: .8rem; }
+    .sec-head h2 { font-size: clamp(1.9rem, 4vw, 2.7rem); color: var(--navy); margin: 10px 0 14px; }
+    .sec-head p { color: var(--muted); }
+
+    .sobre-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: 55px; align-items: center; }
+    .sobre-photo {
+      border-radius: var(--radius); overflow: hidden; box-shadow: var(--shadow);
+      aspect-ratio: 4/5; background: linear-gradient(135deg, var(--teal-soft), #fff);
+      display: grid; place-items: center; position: relative;
+    }
+    .sobre-photo img { width: 100%; height: 100%; object-fit: cover; }
+    .sobre-photo .ph-fallback { color: var(--teal-dark); text-align: center; padding: 30px; font-size: .9rem; }
+    .sobre h3 { font-size: 1.5rem; color: var(--navy); margin-bottom: 8px; }
+    .sobre .role { color: var(--teal-dark); font-weight: 600; margin-bottom: 18px; }
+    .sobre p.bio { color: var(--muted); margin-bottom: 24px; }
+
+    .creds { display: grid; gap: 14px; }
+    .cred {
+      display: flex; gap: 14px; align-items: flex-start;
+      background: #fff; padding: 16px 18px; border-radius: 16px;
+      box-shadow: 0 6px 20px rgba(30,42,74,.06);
+      border-left: 4px solid var(--teal);
+    }
+    .cred.pink { border-left-color: var(--pink); }
+    .cred .ic { flex-shrink: 0; width: 40px; height: 40px; border-radius: 11px; background: var(--teal-soft); display: grid; place-items: center; color: var(--teal-dark); }
+    .cred.pink .ic { background: #fde0ee; color: var(--pink-dark); }
+    .cred b { display: block; color: var(--navy); font-size: .98rem; }
+    .cred span { font-size: .86rem; color: var(--muted); }
+
+    /* ---------- SERVIÇOS ---------- */
+    .servicos { padding: 90px 0; background: #fff; }
+    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .card {
+      background: var(--cream); border-radius: var(--radius); padding: 30px 26px;
+      transition: transform .25s, box-shadow .25s; border: 1px solid rgba(30,42,74,.04);
+    }
+    .card:hover { transform: translateY(-6px); box-shadow: var(--shadow); }
+    .card .paw { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; margin-bottom: 18px; color: #fff; }
+    .card h3 { font-size: 1.18rem; color: var(--navy); margin-bottom: 8px; }
+    .card p { font-size: .92rem; color: var(--muted); }
+
+    .wevets {
+      display: flex; align-items: center; gap: 18px; margin-top: 34px;
+      background: linear-gradient(135deg, var(--teal-soft), #fff);
+      border: 1px solid rgba(47,159,172,.25); border-radius: 18px;
+      padding: 20px 26px; box-shadow: 0 8px 24px rgba(30,42,74,.06);
+    }
+    .wevets-ic { font-size: 1.8rem; flex-shrink: 0; }
+    .wevets b { display: block; color: var(--navy); font-size: 1.05rem; }
+    .wevets b span { color: var(--teal-dark); }
+    .wevets > div > span { font-size: .9rem; color: var(--muted); }
+
+    /* ---------- AVALIAÇÕES ---------- */
+    .reviews { padding: 90px 0; }
+    .review-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
+    .review { background: #fff; border-radius: 20px; padding: 26px; box-shadow: 0 8px 24px rgba(30,42,74,.07); display: flex; flex-direction: column; }
+    .review .who { display: flex; align-items: center; gap: 12px; margin-bottom: 12px; }
+    .review .avatar { width: 46px; height: 46px; border-radius: 50%; background: linear-gradient(135deg, var(--teal), var(--teal-dark)); color: #fff; display: grid; place-items: center; font-family: 'Quicksand'; font-weight: 700; flex-shrink: 0; }
+    .review .who b { display: block; color: var(--navy); font-size: .95rem; }
+    .review .who span { font-size: .78rem; color: var(--muted); }
+    .review .stars { color: #f5b301; letter-spacing: 2px; margin-bottom: 10px; font-size: .95rem; }
+    .review p { color: #555b6b; font-size: .92rem; }
+    .review .g { margin-top: auto; padding-top: 14px; font-size: .74rem; color: #9aa4bd; display: flex; align-items: center; gap: 6px; }
+    .reviews-cta { text-align: center; margin-top: 40px; }
+
+    /* ---------- AGENDA ---------- */
+    .agenda { padding: 90px 0; }
+    .agenda-box {
+      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
+      border-radius: 32px; padding: 55px; color: #fff; position: relative; overflow: hidden;
+      box-shadow: var(--shadow);
+    }
+    .agenda-box::after {
+      content: ""; position: absolute; right: -60px; top: -60px; width: 260px; height: 260px;
+      background: rgba(255,255,255,.08); border-radius: 50%;
+    }
+    .agenda-inner { position: relative; z-index: 2; text-align: center; max-width: 640px; margin: 0 auto; }
+    .agenda h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 14px; }
+    .agenda p { color: rgba(255,255,255,.9); margin-bottom: 26px; }
+    .agenda-actions { display: flex; justify-content: center; gap: 14px; }
+    .btn-light { background: #fff; color: var(--teal-dark); box-shadow: 0 12px 26px rgba(0,0,0,.18); }
+    .btn-light:hover { transform: translateY(-3px); }
+    .btn-ghost { background: rgba(255,255,255,.14); color: #fff; border: 2px solid rgba(255,255,255,.5); }
+    .btn-ghost:hover { background: rgba(255,255,255,.24); }
+
+    /* ---------- CONTATO / FOOTER ---------- */
+    .contato { padding: 90px 0 40px; background: var(--navy); color: #fff; }
+    .contato-grid { display: grid; grid-template-columns: 1.2fr 1fr; gap: 50px; align-items: center; }
+    .contato h2 { font-size: clamp(1.8rem, 3.5vw, 2.5rem); margin-bottom: 14px; }
+    .contato p { color: #b9c2d8; margin-bottom: 26px; }
+    .contact-list { display: grid; gap: 16px; }
+    .contact-item { display: flex; align-items: center; gap: 14px; }
+    .contact-item .ic { width: 46px; height: 46px; border-radius: 13px; background: rgba(255,255,255,.08); display: grid; place-items: center; color: var(--teal); }
+    .contact-item b { display: block; font-size: .95rem; }
+    .contact-item span { font-size: .82rem; color: #9aa4bd; }
+
+    .footer-bottom {
+      margin-top: 55px; padding-top: 24px; border-top: 1px solid rgba(255,255,255,.1);
+      display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 12px;
+      font-size: .82rem; color: #9aa4bd;
+    }
+
+    /* ---------- FLOAT WA ---------- */
+    .wa-float {
+      position: fixed; bottom: 24px; right: 24px; z-index: 90;
+      width: 60px; height: 60px; border-radius: 50%; background: #25D366;
+      display: grid; place-items: center; color: #fff;
+      box-shadow: 0 12px 30px rgba(37, 211, 102, .5);
+      animation: pulse 2.5s infinite;
+    }
+    @keyframes pulse {
+      0% { box-shadow: 0 0 0 0 rgba(37,211,102,.5); }
+      70% { box-shadow: 0 0 0 18px rgba(37,211,102,0); }
+      100% { box-shadow: 0 0 0 0 rgba(37,211,102,0); }
+    }
+    .wa-float svg { width: 32px; height: 32px; }
+
+    /* ---------- RESPONSIVE ---------- */
+    @media (max-width: 900px) {
+      .nav-links { position: fixed; inset: 66px 0 auto 0; background: var(--cream); flex-direction: column; padding: 24px; gap: 18px; box-shadow: var(--shadow); transform: translateY(-140%); transition: transform .3s; }
+      .nav-links.open { transform: translateY(0); }
+      .menu-btn { display: block; }
+      .hero-grid, .sobre-grid, .agenda-grid, .contato-grid { grid-template-columns: 1fr; }
+      .hero-photo { order: -1; }
+      .cards { grid-template-columns: repeat(2, 1fr); }
+      .review-cards { grid-template-columns: 1fr; }
+      .wevets { flex-direction: column; text-align: center; }
+      .strip-grid { grid-template-columns: repeat(2, 1fr); gap: 24px; }
+      .agenda-box { padding: 36px 26px; }
+    }
+    @media (max-width: 560px) {
+      .cards { grid-template-columns: 1fr; }
+      .hero-actions { flex-direction: column; }
+      .btn { justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ============ NAV ============ -->
+  <header>
+    <div class="wrap nav">
+      <a href="#top" class="brand">
+        <div class="cross"></div>
+        <div class="brand-text">
+          <b>Isabelle Sudario</b>
+          <span>Médica Veterinária</span>
+        </div>
+      </a>
+      <nav class="nav-links" id="navLinks">
+        <a href="#sobre">Sobre</a>
+        <a href="#servicos">Serviços</a>
+        <a href="#avaliacoes">Avaliações</a>
+        <a href="#agenda">Agenda</a>
+        <a href="#contato">Contato</a>
+        <a class="nav-cta" href="#agenda">Agendar consulta</a>
+      </nav>
+      <button class="menu-btn" id="menuBtn" aria-label="Menu">☰</button>
+    </div>
+  </header>
+
+  <!-- ============ HERO ============ -->
+  <section class="hero" id="top">
+    <div class="wrap hero-grid">
+      <div class="hero-text">
+        <span class="eyebrow">🐾 Atendimento em domicílio</span>
+        <h1>Cuidado completo <br />para o <span class="hl">seu pet</span></h1>
+        <p class="lead">Da prevenção ao diagnóstico neurológico. Agende hoje um check-up com a Dra. Isabelle Sudario — no conforto da sua casa.</p>
+        <div class="hero-actions">
+          <a class="btn btn-wa" id="waHero" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+            Falar no WhatsApp
+          </a>
+        </div>
+      </div>
+      <div class="hero-photo">
+        <div class="hero-blob"></div>
+        <!-- Substitua o src pela foto dela (PNG com fundo transparente fica perfeito) -->
+        <img src="assets/isabelle.webp" alt="Dra. Isabelle Sudario com filhote"
+             onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+        <div class="ph-fallback" style="display:none">📷<br />Adicione a foto da Dra.<br /><small>assets/isabelle.webp</small></div>
+        <div class="floaty f1"><span class="dot" style="background:var(--pink)">🩺</span> Neurologia</div>
+        <div class="floaty f2"><span class="dot" style="background:var(--teal)">🏠</span> Atendimento em casa</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ STRIP ============ -->
+  <section class="strip">
+    <div class="wrap strip-grid">
+      <div><b>+5</b><span>Anos de experiência</span></div>
+      <div><b>100+</b><span>Pets atendidos</span></div>
+      <div><b>100%</b><span>Atendimento humanizado</span></div>
+    </div>
+  </section>
+
+  <!-- ============ SOBRE ============ -->
+  <section class="sobre" id="sobre">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Quem cuida do seu pet</span>
+        <h2>Dra. Isabelle Sudario</h2>
+        <p>Clínica Geral &amp; Neurologia Veterinária</p>
+      </div>
+      <div class="sobre-grid">
+        <div class="sobre-photo">
+          <img src="assets/isabelle-sobre.png" alt="Dra. Isabelle Sudario"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
+          <div class="ph-fallback" style="display:none">📷 Adicione uma foto<br /><small>assets/isabelle-sobre.png</small></div>
+        </div>
+        <div>
+          <h3>Paixão por medicina veterinária e neurologia</h3>
+          <p class="role">Médica Veterinária — CRMV 61031</p>
+          <p class="bio">Formada pela <strong>Faculdade São Judas</strong>, a Dra. Isabelle dedica sua carreira ao cuidado completo dos animais, unindo clínica geral e um olhar especializado para casos neurológicos. Atendimento acolhedor, no conforto do lar do seu pet.</p>
+          <div class="creds">
+            <div class="cred">
+              <div class="ic">🎓</div>
+              <div><b>Pós-graduada em Neurologia e Neurocirurgia</b><span>Especialização em diagnóstico e tratamento neurológico</span></div>
+            </div>
+            <div class="cred pink">
+              <div class="ic">🔬</div>
+              <div><b>Pós-graduanda em Oncologia</b><span>Aprimoramento contínuo no cuidado de pacientes oncológicos</span></div>
+            </div>
+            <div class="cred">
+              <div class="ic">🏛️</div>
+              <div><b>Graduação — Faculdade São Judas</b><span>Formação em Medicina Veterinária</span></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ SERVIÇOS ============ -->
+  <section class="servicos" id="servicos">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">O que oferecemos</span>
+        <h2>Serviços</h2>
+        <p>Cuidado veterinário completo, com atendimento volante e domiciliar.</p>
+      </div>
+      <div class="cards">
+        <div class="card">
+          <div class="paw" style="background:var(--teal)">🩺</div>
+          <h3>Clínica Geral</h3>
+          <p>Consultas, avaliações e acompanhamento da saúde do seu pet.</p>
+        </div>
+        <div class="card">
+          <div class="paw" style="background:var(--pink)">🧠</div>
+          <h3>Neurologia Veterinária</h3>
+          <p>Diagnóstico e tratamento de doenças do sistema nervoso.</p>
+        </div>
+        <div class="card">
+          <div class="paw" style="background:var(--navy)">🚗</div>
+          <h3>Atendimento Volante</h3>
+          <p>A Dra. vai até você, onde o seu pet estiver mais confortável.</p>
+        </div>
+        <div class="card">
+          <div class="paw" style="background:var(--teal)">🏠</div>
+          <h3>Atendimento Domiciliar</h3>
+          <p>Consultas sem estresse, no ambiente familiar do animal.</p>
+        </div>
+        <div class="card">
+          <div class="paw" style="background:var(--pink)">🧪</div>
+          <h3>Exames Laboratoriais</h3>
+          <p>Coleta e análises para um diagnóstico completo e preciso.</p>
+        </div>
+        <div class="card">
+          <div class="paw" style="background:var(--navy)">💉</div>
+          <h3>Vacinas &amp; Check-up</h3>
+          <p>Vacinação, atestado de saúde e prevenção de rotina.</p>
+        </div>
+      </div>
+
+      <div class="wevets">
+        <div class="wevets-ic">💙</div>
+        <div>
+          <b>Aceitamos o plano de saúde <span>Wevets</span></b>
+          <span>Atendimento facilitado para quem é assinante Wevets. Consulte as condições pelo WhatsApp.</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AVALIAÇÕES ============ -->
+  <!-- 👉 Troque os nomes, datas e textos pelos depoimentos REAIS das clientes.
+       O botão do final leva para o perfil do Google (link em CONFIG.googleReviewsUrl). -->
+  <section class="reviews" id="avaliacoes">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="tag">Quem já foi atendido</span>
+        <h2>O que os tutores dizem</h2>
+        <p>Nota <strong>5,0 ★★★★★</strong> no Google — a confiança de quem já cuidou do seu pet com a Dra. Isabelle.</p>
+      </div>
+
+      <div class="review-cards">
+        <div class="review">
+          <div class="who">
+            <div class="avatar">G</div>
+            <div><b>Gabriela Fernandes</b><span>6 meses atrás</span></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>"Nós confiamos na Dra. Isabelle de olhos fechados quando o assunto é cuidados com a nossa cachorrinha. A Nala, desde muito novinha, sempre teve muitas questões de saúde e todas as vezes que a levamos para a Dra, ela soube identificar o problema e tratá-lo! Desconheço veterinária mais compromissada, responsável e dedicada. Super recomendo!"</p>
+          <div class="g">via Google</div>
+        </div>
+        <div class="review">
+          <div class="who">
+            <div class="avatar">C</div>
+            <div><b>Caroline Rodrigues</b><span>2 semanas atrás</span></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>"Excelente atendimento da Dra. Isabelle, sempre com atenção e respeito pelo meu cachorrinho que tem hidrocefalia e quadros de convulsão, além do ótimo esclarecimento sobre as condições dele e as recomendações de tratamento. Recomendo 100%!"</p>
+          <div class="g">via Google</div>
+        </div>
+        <div class="review">
+          <div class="who">
+            <div class="avatar">N</div>
+            <div><b>Natália G. Lopes Cappi</b><span>Local Guide · 3 semanas atrás</span></div>
+          </div>
+          <div class="stars">★★★★★</div>
+          <p>"Me ajudou com a minha gatinha. Médica sempre muito atenciosa com o atendimento. Excelente profissional!"</p>
+          <div class="g">via Google</div>
+        </div>
+      </div>
+
+      <div class="reviews-cta">
+        <a class="btn btn-outline" id="googleBtn" href="#" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" width="18" height="18"><path fill="#4285F4" d="M22.5 12.2c0-.7-.1-1.4-.2-2H12v3.9h5.9a5 5 0 0 1-2.2 3.3v2.7h3.6c2.1-1.9 3.2-4.8 3.2-7.9z"/><path fill="#34A853" d="M12 23c2.9 0 5.4-1 7.2-2.6l-3.6-2.7c-1 .7-2.3 1.1-3.6 1.1-2.8 0-5.1-1.9-6-4.4H2.3v2.8A11 11 0 0 0 12 23z"/><path fill="#FBBC05" d="M6 14.4a6.6 6.6 0 0 1 0-4.2V7.4H2.3a11 11 0 0 0 0 9.8L6 14.4z"/><path fill="#EA4335" d="M12 5.4c1.6 0 3 .5 4.1 1.6l3.1-3.1A11 11 0 0 0 2.3 7.4L6 10.2c.9-2.5 3.2-4.8 6-4.8z"/></svg>
+          Ver todas as avaliações no Google
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ AGENDA ============ -->
+  <section class="agenda" id="agenda">
+    <div class="wrap">
+      <div class="agenda-box">
+        <div class="agenda-inner" id="agendaInner">
+          <div class="agenda-copy">
+            <h2>Agende sua consulta</h2>
+            <p>Fale diretamente com a Dra. Isabelle pelo WhatsApp para tirar dúvidas e marcar o melhor horário para o seu pet.</p>
+            <div class="agenda-actions">
+              <a class="btn btn-light" id="calBtn" href="#" target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" fill="currentColor" style="width:20px;height:20px"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+                Agendar pelo WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ CONTATO ============ -->
+  <footer class="contato" id="contato">
+    <div class="wrap">
+      <div class="contato-grid">
+        <div>
+          <h2>Vamos cuidar do seu pet juntos?</h2>
+          <p>Fale com a Dra. Isabelle pelo WhatsApp. Respondemos rápido para agendar consultas, tirar dúvidas e orientar sobre o melhor cuidado.</p>
+          <a class="btn btn-wa" id="waFooter" href="#" target="_blank" rel="noopener">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+            Conversar agora
+          </a>
+        </div>
+        <div class="contact-list">
+          <a class="contact-item" id="waContact" href="#" target="_blank" rel="noopener">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="currentColor" width="22" height="22"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+            </div>
+            <div><b>WhatsApp</b><span id="waNumberLabel">Toque para conversar</span></div>
+          </a>
+          <a class="contact-item" href="https://instagram.com/isabellesudario.vet" target="_blank" rel="noopener">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="5.5"/><circle cx="12" cy="12" r="4"/><circle cx="17.4" cy="6.6" r="1.1" fill="currentColor" stroke="none"/></svg>
+            </div>
+            <div><b>Instagram</b><span>@isabellesudario.vet</span></div>
+          </a>
+          <div class="contact-item">
+            <div class="ic">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" width="22" height="22"><path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            </div>
+            <div><b>Atendimento</b><span>Domiciliar e volante</span></div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© <span id="year"></span> Dra. Isabelle Sudario — Médica Veterinária. Todos os direitos reservados.</span>
+        <span>Feito com 🩵 para os pets</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ============ WHATSAPP FLUTUANTE ============ -->
+  <a class="wa-float" id="waFloat" href="#" target="_blank" rel="noopener" aria-label="WhatsApp">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.05 4.91A9.82 9.82 0 0 0 12.04 2C6.58 2 2.13 6.45 2.13 11.91c0 1.75.46 3.45 1.32 4.95L2.05 22l5.25-1.38a9.9 9.9 0 0 0 4.74 1.21h.01c5.46 0 9.9-4.45 9.9-9.91 0-2.65-1.03-5.14-2.9-7.01zM12.05 20.15h-.01a8.23 8.23 0 0 1-4.19-1.15l-.3-.18-3.12.82.83-3.04-.2-.31a8.2 8.2 0 0 1-1.26-4.38c0-4.54 3.7-8.24 8.25-8.24 2.2 0 4.27.86 5.83 2.42a8.2 8.2 0 0 1 2.41 5.83c0 4.55-3.7 8.24-8.24 8.24zm4.52-6.16c-.25-.12-1.47-.72-1.69-.81-.23-.08-.39-.12-.56.13-.16.25-.64.81-.79.97-.14.17-.29.19-.54.06-.25-.12-1.05-.39-1.99-1.23-.74-.66-1.23-1.47-1.38-1.72-.14-.25-.02-.38.11-.51.11-.11.25-.29.37-.43.13-.14.17-.25.25-.41.08-.17.04-.31-.02-.43-.06-.12-.56-1.34-.76-1.84-.2-.48-.4-.42-.56-.42-.14 0-.31-.02-.47-.02-.17 0-.43.06-.66.31-.23.25-.86.85-.86 2.07 0 1.22.89 2.4 1.01 2.56.12.17 1.75 2.67 4.23 3.74.59.26 1.05.41 1.41.52.59.19 1.13.16 1.56.1.48-.07 1.47-.6 1.68-1.18.21-.58.21-1.07.14-1.18-.06-.1-.22-.16-.47-.28z"/></svg>
+  </a>
+
+  <!-- ============ CONFIGURAÇÃO ============ -->
+  <script>
+    /* =======================================================
+       👉 EDITE AQUI — os únicos dados que você precisa trocar
+       ======================================================= */
+    const CONFIG = {
+      // Número do WhatsApp no formato internacional, só dígitos (55 + DDD + número)
+      whatsapp: "5511980705807",
+
+      // Mensagem que já vem escrita quando o cliente abre o WhatsApp
+      whatsappMsg: "Olá, Dra. Isabelle! Gostaria de agendar uma consulta para o meu pet 🐾",
+
+      // Link do perfil/avaliações no Google (cole o link "Ver todas as avaliações" do Google)
+      googleReviewsUrl: "https://www.google.com/search?q=Isabelle+Sudario+veterinaria"
+    };
+
+    /* ---------- Não precisa editar daqui pra baixo ---------- */
+    const waLink = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(CONFIG.whatsappMsg)}`;
+    ["waHero","waFooter","waFloat","waContact","calBtn"].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) el.href = waLink;
+    });
+    const label = document.getElementById("waNumberLabel");
+    if (label) {
+      const n = CONFIG.whatsapp;
+      label.textContent = `+${n.slice(0,2)} (${n.slice(2,4)}) ${n.slice(4,9)}-${n.slice(9)}`;
+    }
+
+    // Link do Google (avaliações)
+    const googleBtn = document.getElementById("googleBtn");
+    if (googleBtn) googleBtn.href = CONFIG.googleReviewsUrl;
+
+    // Ano no rodapé
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Menu mobile
+    const menuBtn = document.getElementById("menuBtn");
+    const navLinks = document.getElementById("navLinks");
+    menuBtn.addEventListener("click", () => navLinks.classList.toggle("open"));
+    navLinks.querySelectorAll("a").forEach(a => a.addEventListener("click", () => navLinks.classList.remove("open")));
+  </script>
+</body>
+</html>
