@@ -68,19 +68,10 @@
       padding: 14px 0;
     }
     .brand { display: flex; align-items: center; gap: 12px; }
-    .brand .cross {
-      width: 40px; height: 40px; border-radius: 12px;
-      background: linear-gradient(135deg, var(--teal), var(--teal-dark));
-      display: grid; place-items: center; color: #fff; font-weight: 700;
-      box-shadow: 0 6px 16px rgba(47, 159, 172, .35);
-      position: relative;
+    .brand .brand-logo {
+      width: 48px; height: 48px; border-radius: 50%; object-fit: cover;
+      background: #fff; box-shadow: 0 4px 12px rgba(30, 42, 74, .18);
     }
-    .brand .cross::before,
-    .brand .cross::after {
-      content: ""; position: absolute; background: #fff; border-radius: 2px;
-    }
-    .brand .cross::before { width: 18px; height: 5px; }
-    .brand .cross::after { width: 5px; height: 18px; }
     .brand-text b { font-family: 'Quicksand'; font-weight: 700; font-size: 1.05rem; color: var(--navy); display: block; line-height: 1.1; }
     .brand-text span { font-size: .68rem; letter-spacing: 3px; color: var(--teal-dark); text-transform: uppercase; }
 
@@ -308,7 +299,7 @@
   <header>
     <div class="wrap nav">
       <a href="#top" class="brand">
-        <div class="cross"></div>
+        <img class="brand-logo" src="assets/logo.png" alt="Logo Isabelle Sudario — Médica Veterinária Neurologista" />
         <div class="brand-text">
           <b>Isabelle Sudario</b>
           <span>Médica Veterinária</span>
@@ -346,8 +337,6 @@
         <img src="assets/isabelle.webp" alt="Dra. Isabelle Sudario com filhote"
              onerror="this.style.display='none';this.nextElementSibling.style.display='grid';" />
         <div class="ph-fallback" style="display:none">📷<br />Adicione a foto da Dra.<br /><small>assets/isabelle.webp</small></div>
-        <div class="floaty f1"><span class="dot" style="background:var(--pink)">🩺</span> Neurologia</div>
-        <div class="floaty f2"><span class="dot" style="background:var(--teal)">🏠</span> Atendimento em casa</div>
       </div>
     </div>
   </section>
@@ -388,10 +377,7 @@
               <div class="ic">🔬</div>
               <div><b>Pós-graduanda em Oncologia</b><span>Aprimoramento contínuo no cuidado de pacientes oncológicos</span></div>
             </div>
-            <div class="cred">
-              <div class="ic">🏛️</div>
-              <div><b>Graduação — Faculdade São Judas</b><span>Formação em Medicina Veterinária</span></div>
-            </div>
+            <!-- TERCEIRO CARD: definido conforme escolha -->
           </div>
         </div>
       </div>
@@ -457,14 +443,14 @@
       <div class="sec-head">
         <span class="tag">Quem já foi atendido</span>
         <h2>O que os tutores dizem</h2>
-        <p>Nota <strong>5,0 ★★★★★</strong> no Google — a confiança de quem já cuidou do seu pet com a Dra. Isabelle.</p>
+        <p>A confiança de quem já cuidou do seu pet com a Dra. Isabelle.</p>
       </div>
 
       <div class="review-cards">
         <div class="review">
           <div class="who">
             <div class="avatar">G</div>
-            <div><b>Gabriela Fernandes</b><span>6 meses atrás</span></div>
+            <div><b>Gabriela Fernandes</b><span></span></div>
           </div>
           <div class="stars">★★★★★</div>
           <p>"Nós confiamos na Dra. Isabelle de olhos fechados quando o assunto é cuidados com a nossa cachorrinha. A Nala, desde muito novinha, sempre teve muitas questões de saúde e todas as vezes que a levamos para a Dra, ela soube identificar o problema e tratá-lo! Desconheço veterinária mais compromissada, responsável e dedicada. Super recomendo!"</p>
@@ -473,7 +459,7 @@
         <div class="review">
           <div class="who">
             <div class="avatar">C</div>
-            <div><b>Caroline Rodrigues</b><span>2 semanas atrás</span></div>
+            <div><b>Caroline Rodrigues</b><span></span></div>
           </div>
           <div class="stars">★★★★★</div>
           <p>"Excelente atendimento da Dra. Isabelle, sempre com atenção e respeito pelo meu cachorrinho que tem hidrocefalia e quadros de convulsão, além do ótimo esclarecimento sobre as condições dele e as recomendações de tratamento. Recomendo 100%!"</p>
@@ -482,7 +468,7 @@
         <div class="review">
           <div class="who">
             <div class="avatar">N</div>
-            <div><b>Natália G. Lopes Cappi</b><span>Local Guide · 3 semanas atrás</span></div>
+            <div><b>Natália G. Lopes Cappi</b><span></span></div>
           </div>
           <div class="stars">★★★★★</div>
           <p>"Me ajudou com a minha gatinha. Médica sempre muito atenciosa com o atendimento. Excelente profissional!"</p>
